@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 /* eslint-disable react/prop-types */
 const Country = (props) => {
   const { country, data } = props;
+
+  // console.log(data.length);
+
   return (
     <div key={country.id}>
       <Link to={`/country/${country.name}`}><h2>{country.name}</h2></Link>
