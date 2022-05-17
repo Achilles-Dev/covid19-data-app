@@ -10,8 +10,15 @@ const API = {
       });
   },
 
-  getCountryDataByData: (country, startDate, endDate, success) => {
-    axios.get(`${baseURL}/api/country/${country}?date_from=${startDate}&date_to=${endDate}`)
+  getAllCountriesData: (date, success) => {
+    axios.get(`${baseURL}/api/${date}`)
+      .then((res) => {
+        success(res);
+      });
+  },
+
+  getCountryDataByDate: (country, date, success) => {
+    axios.get(`${baseURL}/api/country/${date}/country/${country}`)
       .then((res) => {
         success(res);
       });
