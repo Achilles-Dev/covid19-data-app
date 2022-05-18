@@ -1,54 +1,52 @@
-# Project Name
+# Covid19 Data App
 
-> Description the project.
+> This is a mobile web application to check the data on the total covid19 
+> confirmed cases and deaths, check data for all countries with recorded cases. 
+> It also has a details page to check for the statistics for each region/state if available.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript
+- React
+- CSS
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Covid-19 Data App](https://livedemo.com)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+1. Clone Repository 
+  
+  Run
+   ```
+   git clone git@github.com:Achilles-Dev/covid19-data-app.git
 
-### Setup
+   cd covid19-data-app
+   ```
 
 ### Install
 
-### Usage
+  Run
+   ```
+   npm install 
 
-### Run tests
-
-### Deployment
-
+   npm start
+   ```
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Solomon Hagan**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Achilles-Dev](https://github.com/Achilles-Dev/)
+- Twitter: [@SoloAchilles](https://twitter.com/SoloAchilles/)
+- LinkedIn: [Solomon Hagan](https://www.linkedin.com/in/solomon-hagan-b51693138/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
@@ -62,10 +60,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- External API from "https://api.covid19tracking.narrativa.com"
+- Original design idea (Ballhead App (Free PSDs)) by Nelson Sakwa [Website](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
 
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
