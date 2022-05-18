@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gill+Sans:wght@100;300;400;500;600;700&display=swap');
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Gill Sans, sans-serif;
+  background: #e14984;
+  color: #fff;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+p {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-col-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  justify-content: space-between;
+  height: 15%;
+  padding: 1% 2%;
+  font-size: 18px;
+}
+
+.header > h3,
+.header-end,
+.header-start {
+  align-items: center;
+  gap: 10px;
+}
+
+.header-end {
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.main-header {
+  height: 25%;
+  background: #e14984;
+  padding: 2%;
+  justify-content: center;
+  gap: 0;
+  align-items: flex-end;
+}
+
+.main > h3,
+.region > h3 {
+  margin-left: 10px;
+  background: #c21f57;
+}
+
+.main-cards {
+  margin: 10px 0 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #e14984;
+}
+
+.card {
+  flex-basis: 50%;
+  gap: 20px;
+  padding-bottom: 15px;
+}
+
+.deep-red {
+  background: #c21f57;
+}
+
+.card-top {
+  justify-content: space-between;
+}
+
+.card img {
+  padding: 2%;
+  max-width: 100px;
+  height: 60px;
+}
+
+.card a {
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card > a > div > h2,
+.card-details {
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+.card > a > div > h2 {
+  max-width: 150px;
+}
+
+.card svg {
+  margin: 10px;
+}
+
+.region-header {
+  justify-content: space-between;
+  background: #e14984;
+  padding: 2%;
+}
+
+.region-header img {
+  width: 100px;
+  height: 100px;
+}
+
+.region-cards {
+  width: 100%;
+  background: #e14984;
+}
+
+.region-card-details {
+  align-items: center;
+  padding: 5% 1%;
+  justify-content: space-between;
+}
+
+.region-card-details:nth-child(even) {
+  background: #c21f57;
+}
+
+.region-card-details > h3 {
+  width: 30%;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    width: 80%;
+  }
+}
