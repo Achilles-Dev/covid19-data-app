@@ -43,11 +43,15 @@ p {
   font-size: 18px;
 }
 
-.header > div,
-.header > h3 {
+.header > h3,
+.header-end,
+.header-start {
   align-items: center;
-  max-width: 100px;
   gap: 10px;
+}
+
+.header-end {
+  justify-content: flex-end;
 }
 
 .header-end {
@@ -63,8 +67,10 @@ p {
   align-items: flex-end;
 }
 
-.main > h3 {
+.main > h3,
+.region > h3 {
   margin-left: 10px;
+  background: #c21f57;
 }
 
 .main-cards {

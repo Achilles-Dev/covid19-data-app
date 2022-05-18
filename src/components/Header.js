@@ -6,7 +6,7 @@ import { year } from './Date';
 
 const Header = () => (
   <div className="header d-flex">
-    <div className="d-flex">
+    <div className="header-start d-flex">
       <NavLink to="/"><FontAwesomeIcon icon={faChevronLeft} /></NavLink>
       <h3>{year}</h3>
     </div>

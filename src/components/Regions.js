@@ -14,7 +14,7 @@ const Regions = () => {
     setCountryName(country);
   }, []);
   return (
-    <div>
+    <div className="region">
       {
         data[countryName]
           ? (

@@ -2,6 +2,7 @@ import API from './api';
 
 const GET_ALL_COUNTRIES = 'covid19-data-app/countries/GET_ALL_COUNTRIES';
 const GET_ALL_COUNTRIES_DATA = 'covid19-data-app/countries/GET_ALL_COUNTRIES_DATA';
+const GET_COUNTRY_BY_NAME = 'covid19-data-app/countries/GET_COUNTRY_BY_NAME';
 
 const initialState = {
   countries: [],
@@ -27,6 +28,11 @@ const countriesReducer = (state = initialState, action) => {
         ...state,
         data: payload.dates[date].countries,
       };
+    case GET_COUNTRY_BY_NAME:
+      return {
+        ...state,
+        countries: state.countries.filter((country) => country.name === payload),
+      };
     default: return state;
   }
 };
@@ -47,6 +53,13 @@ export const getAllCountriesData = (date) => (dispatch) => {
       payload: res.data,
       date,
     });
+  });
+};
+
+export const getCountryByName = (name) => (dispatch) => {
+  dispatch({
+    type: GET_COUNTRY_BY_NAME,
+    payload: name,
   });
 };
 
