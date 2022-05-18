@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://api.covid19tracking.narrativa.com/';
+const baseURL = 'https://api.covid19tracking.narrativa.com';
 
 const API = {
   getAllCountries: (success) => {

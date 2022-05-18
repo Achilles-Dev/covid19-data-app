@@ -6,7 +6,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/configureStore';
-import date from './components/Date';
+import { date } from './components/Date';
 import { getAllCountriesData } from './redux/countries';
 
 store.dispatch(getAllCountriesData(date));

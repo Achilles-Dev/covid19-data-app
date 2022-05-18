@@ -1,36 +1,53 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCountries, getAllCountriesData } from '../redux/countries';
+import { getAllCountries } from '../redux/countries';
 import Country from './Country';
-import date from './Date';
+import numberFormater from './FormatNumber';
 
 const Countries = () => {
   const countries = useSelector((state) => state.countries.countries);
   const data = useSelector((state) => state.countries.data);
   const dispatch = useDispatch();
+  const [totalConfirmed, setTotalConfirmed] = useState(0);
+  const [totalDeaths, setTotalDeaths] = useState(0);
 
   useEffect(() => {
     dispatch(getAllCountries());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getAllCountriesData(date));
-  }, [dispatch]);
+    const deaths = countries.map((country) => data[country.name].today_deaths)
+      .reduce((prev, curr) => prev + curr, 0);
+    setTotalDeaths(deaths);
+
+    const confirmed = countries.map((country) => data[country.name].today_confirmed)
+      .reduce((prev, curr) => prev + curr, 0);
+    setTotalConfirmed(confirmed);
+  }, [0]);
 
   return (
-    <div>
-      <div className="main-header">
+    <div className="main">
+      <div className="main-header d-col-flex">
         <h2>WORLD STATS</h2>
-        <p>{`Total confirmed: ${4}`}</p>
-        <p>{`Total deaths: ${4}`}</p>
+        <p>{`Confirmed cases: ${numberFormater(totalConfirmed)}`}</p>
+        <p>{`Deaths: ${numberFormater(totalDeaths)}`}</p>
       </div>
-      {
-        countries.length > 0
-          ? countries.map((country) => (
-            <Country key={country.id} country={country} data={data} />
-          ))
-          : ''
-      }
+      <h3>STATS BY COUNTRY</h3>
+      <div className="main-cards">
+        {
+          countries.length > 0
+            ? countries.map((country, index) => (
+              <Country
+                key={country.id}
+                country={country}
+                data={data}
+                index={index}
+                length={countries.length}
+              />
+            ))
+            : ''
+        }
+      </div>
     </div>
   );
 };

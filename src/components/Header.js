@@ -1,16 +1,19 @@
+import { faChevronLeft, faGear, faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { year } from './Date';
 
 const Header = () => (
   <div className="header d-flex">
     <div className="d-flex">
-      <NavLink to="/"><i className="fa fa-chevron-left" /></NavLink>
-      <h3>Covid19 Data</h3>
+      <NavLink to="/"><FontAwesomeIcon icon={faChevronLeft} /></NavLink>
+      <h3>{year}</h3>
     </div>
-    <h3>Data by country</h3>
+    <h3>Covid19 Data</h3>
     <div className="header-end d-flex">
-      <i className="fa fa-solid fa-gear" />
-      <i className="fa fa-solid fa-microphone" />
+      <FontAwesomeIcon icon={faMicrophone} />
+      <FontAwesomeIcon icon={faGear} />
     </div>
   </div>
 );
