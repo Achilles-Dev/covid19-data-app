@@ -19,6 +19,11 @@ const Countries = () => {
 
   return (
     <div>
+      <div className="main-header">
+        <h2>WORLD STATS</h2>
+        <p>{`Total confirmed: ${4}`}</p>
+        <p>{`Total deaths: ${4}`}</p>
+      </div>
       {
         countries.length > 0
           ? countries.map((country) => (

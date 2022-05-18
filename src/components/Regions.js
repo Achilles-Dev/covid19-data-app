@@ -22,11 +22,11 @@ const Regions = () => {
               {
                 data[countryName].regions.length > 0
                   ? data[countryName].regions.map((region) => (
-                    <>
-                      <p key={region.id}>{region.name}</p>
+                    <div key={region.id}>
+                      <p>{region.name}</p>
                       <p>{`Total deaths: ${region.today_deaths}`}</p>
                       <p>{`Total active cases: ${region.today_confirmed}`}</p>
-                    </>
+                    </div>
                   ))
                   : <p>No Region Found</p>
               }

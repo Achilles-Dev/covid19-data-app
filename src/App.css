@@ -1,5 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gill+Sans:wght@100;300;400;500;600;700&display=swap');
+
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Gill Sans, sans-serif;
+  background: #e14984;
+  color: #fff;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}
+
+.d-flex {
+  display: flex;
+  gap: 10px;
+}
+
+.d-col-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  justify-content: space-between;
+  height: 15%;
+  padding: 1% 2%;
+  font-size: 18px;
+}
+
+.header > div {
+  align-items: center;
+}
+
+.header-end {
+  gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    width: 80%;
+  }
 }

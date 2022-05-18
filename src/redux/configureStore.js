@@ -2,11 +2,9 @@ import { combineReducers, legacy_createStore as createStore, applyMiddleware } f
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import countriesReducer from './countries';
-import countryReducer from './country';
 
 const rootReducer = combineReducers({
   countries: countriesReducer,
-  country: countryReducer,
 });
 
 const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware));
