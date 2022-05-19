@@ -2,7 +2,7 @@
   "name": "covid19-data-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://achilles-dev.github.io",
+  "homepage": "https://achilles-dev.github.io/covid19-data-app",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
