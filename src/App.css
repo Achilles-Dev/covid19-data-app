@@ -66,7 +66,7 @@ p {
 
 .main > h3,
 .region > h3 {
-  margin-left: 10px;
+  padding-left: 10px;
   background: #c21f57;
 }
 
@@ -78,7 +78,6 @@ p {
 }
 
 .card {
-  flex-basis: 50%;
   gap: 20px;
   padding-bottom: 15px;
 }
@@ -151,6 +150,18 @@ p {
 
 @media only screen and (min-width: 768px) {
   body {
-    width: 80%;
+    width: 100%;
+  }
+
+  .main-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .deep-red {
+    background: none;
+  }
+
+  .card {
+    border: 1px solid #000;
   }
 }

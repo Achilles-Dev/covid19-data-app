@@ -12,7 +12,7 @@ const Regions = () => {
 
   useEffect(() => {
     setCountryName(country);
-  }, []);
+  }, [country]);
   return (
     <div className="region">
       {

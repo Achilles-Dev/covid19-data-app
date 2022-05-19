@@ -31,7 +31,7 @@ const countriesReducer = (state = initialState, action) => {
     case GET_COUNTRY_BY_NAME:
       return {
         ...state,
-        countries: state.countries.filter((country) => country.name === payload),
+        countries: state.countries.countries.filter((country) => country.name === payload),
       };
     default: return state;
   }
