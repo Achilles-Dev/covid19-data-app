@@ -16,14 +16,20 @@ const Countries = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const deaths = countries.map((country) => data[country.name].today_deaths)
-      .reduce((prev, curr) => prev + curr, 0);
-    setTotalDeaths(deaths);
+    if (data && data !== []) {
+      const deaths = countries && countries.map((country) => data[country.name].today_deaths)
+        .reduce((prev, curr) => prev + curr, 0);
+      setTotalDeaths(deaths);
+    }
+  }, [data]);
 
-    const confirmed = countries.map((country) => data[country.name].today_confirmed)
-      .reduce((prev, curr) => prev + curr, 0);
-    setTotalConfirmed(confirmed);
-  }, [0]);
+  useEffect(() => {
+    if (data) {
+      const confirmed = countries.map((country) => data[country.name].today_confirmed)
+        .reduce((prev, curr) => prev + curr, 0);
+      setTotalConfirmed(confirmed);
+    }
+  }, [data]);
 
   return (
     <div className="main">
@@ -35,14 +41,13 @@ const Countries = () => {
       <h3>STATS BY COUNTRY</h3>
       <div className="main-cards">
         {
-          countries.length > 0
+          countries && countries.length > 0
             ? countries.map((country, index) => (
               <Country
                 key={country.id}
                 country={country}
                 data={data}
                 index={index}
-                length={countries.length}
               />
             ))
             : ''
