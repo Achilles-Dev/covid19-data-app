@@ -13,7 +13,7 @@
 
 ## Live Demo (if available)
 
-[Covid-19 Data App](https://livedemo.com)
+[Covid-19 Data App](https://achilles-dev.github.io/covid19-data-app/public)
 
 
 ## Getting Started
