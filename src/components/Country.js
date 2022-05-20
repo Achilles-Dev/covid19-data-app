@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import numberFormater from './FormatNumber';
 
-/* eslint-disable react/prop-types */
 const Country = (props) => {
   const {
     country, data, index,
@@ -38,6 +38,16 @@ const Country = (props) => {
     </div>
 
   );
+};
+
+Country.propTypes = {
+  country: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  data: PropTypes.shape({
+  }).isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default Country;

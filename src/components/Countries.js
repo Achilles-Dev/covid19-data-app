@@ -65,7 +65,7 @@ const Countries = () => {
         <p>{`Confirmed cases: ${numberFormater(totalConfirmed)}`}</p>
         <p>{`Deaths: ${numberFormater(totalDeaths)}`}</p>
       </div>
-      <div className="country-header">
+      <div className="country-header d-flex">
         <h3>STATS BY COUNTRY</h3>
         <div className="search-wrapper">
           <label htmlFor="search-form">
@@ -74,7 +74,7 @@ const Countries = () => {
               name="search-form"
               id="search-form"
               className="search-input"
-              placeholder="Search for..."
+              placeholder="Search for country..."
               value={searchInput}
               onChange={(e) => handleChange(e)}
             />

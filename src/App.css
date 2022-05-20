@@ -145,6 +145,24 @@ p {
   width: 30%;
 }
 
+.country-header {
+  background: #c21f57;
+  gap: 20px;
+  padding: 8px 5px;
+  font-size: 16px;
+  justify-content: space-between;
+}
+
+.search-input {
+  padding: 5px 0 5px 4px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-input::placeholder {
+  padding: 2px;
+}
+
 @media only screen and (min-width: 768px) {
   body {
     width: 100%;
