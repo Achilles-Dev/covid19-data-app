@@ -11,9 +11,13 @@
 - React
 - CSS
 
-## Live Demo (if available)
+## Live Version
 
 [Covid-19 Data App](https://admirable-capybara-a0122b.netlify.app/)
+
+## Description Video
+
+[Video Describing the project](https://www.loom.com/share/478aa90bd4ae4d14bcfea02efdafe082)
 
 
 ## Getting Started
