@@ -1,35 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getAllCountries } from '../redux/countries';
 import Country from './Country';
 import numberFormater from './FormatNumber';
 
 const Countries = () => {
-  const countries = useSelector((state) => state.countries.countries);
+  const countries = useSelector((state) => state.countries.countries, shallowEqual);
   const data = useSelector((state) => state.countries.data);
   const dispatch = useDispatch();
+  // const [filteredCountries, setFilteredCountries] = useState(countries);
   const [totalConfirmed, setTotalConfirmed] = useState(0);
   const [totalDeaths, setTotalDeaths] = useState(0);
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleChange = (event) => {
+    setSearchInput(event.target.value);
+  };
 
   useEffect(() => {
     dispatch(getAllCountries());
   }, [dispatch]);
 
   useEffect(() => {
-    if (data && data !== []) {
-      const deaths = countries && countries.map((country) => data[country.name].today_deaths)
-        .reduce((prev, curr) => prev + curr, 0);
-      setTotalDeaths(deaths);
-    }
-  }, [data]);
+    const deaths = countries.map((country) => {
+      if (data[country.name]) {
+        return data[country.name].today_deaths;
+      } return 0;
+    }).reduce((prev, curr) => prev + curr, 0);
+    setTotalDeaths(deaths);
+  }, [Object.keys(data).length]);
 
   useEffect(() => {
-    if (data) {
-      const confirmed = countries.map((country) => data[country.name].today_confirmed)
-        .reduce((prev, curr) => prev + curr, 0);
-      setTotalConfirmed(confirmed);
-    }
-  }, [data]);
+    const confirmed = countries.map((country) => {
+      if (data[country.name]) {
+        return data[country.name].today_confirmed;
+      } return 0;
+    }).reduce((prev, curr) => prev + curr, 0);
+    setTotalConfirmed(confirmed);
+  }, [Object.keys(data).length]);
 
   return (
     <div className="main">
@@ -38,7 +46,23 @@ const Countries = () => {
         <p>{`Confirmed cases: ${numberFormater(totalConfirmed)}`}</p>
         <p>{`Deaths: ${numberFormater(totalDeaths)}`}</p>
       </div>
-      <h3>STATS BY COUNTRY</h3>
+      <div className="country-header">
+        <h3>STATS BY COUNTRY</h3>
+        <div className="search-wrapper">
+          <label htmlFor="search-form">
+            <input
+              type="search"
+              name="search-form"
+              id="search-form"
+              className="search-input"
+              placeholder="Search for..."
+              value={searchInput}
+              onChange={(e) => handleChange(e)}
+            />
+            <span className="sr-only">Search countries here</span>
+          </label>
+        </div>
+      </div>
       <div className="main-cards">
         {
           countries && countries.length > 0
