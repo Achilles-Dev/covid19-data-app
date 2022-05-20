@@ -1,12 +1,12 @@
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { shallowEqual, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import numberFormater from './FormatNumber';
 
 const Regions = () => {
-  const data = useSelector((state) => state.countries.data);
+  const data = useSelector((state) => state.countries.data, shallowEqual);
   const { country } = useParams();
   const [countryName, setCountryName] = useState('');
 
