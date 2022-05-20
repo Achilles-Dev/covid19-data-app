@@ -8,18 +8,37 @@ const Countries = () => {
   const countries = useSelector((state) => state.countries.countries, shallowEqual);
   const data = useSelector((state) => state.countries.data);
   const dispatch = useDispatch();
-  // const [filteredCountries, setFilteredCountries] = useState(countries);
+  const [filteredCountries, setFilteredCountries] = useState([]);
   const [totalConfirmed, setTotalConfirmed] = useState(0);
   const [totalDeaths, setTotalDeaths] = useState(0);
   const [searchInput, setSearchInput] = useState('');
 
+  const handleSearch = () => {
+    if (searchInput !== '') {
+      const newCountry = countries.filter((country) => country.name === searchInput
+      || country.id === searchInput || country.id.includes(searchInput));
+      setFilteredCountries([...newCountry]);
+    } else {
+      setFilteredCountries([...countries]);
+    }
+  };
+
   const handleChange = (event) => {
     setSearchInput(event.target.value);
+    handleSearch();
   };
 
   useEffect(() => {
     dispatch(getAllCountries());
   }, [dispatch]);
+
+  useEffect(() => {
+    setFilteredCountries([...countries]);
+  }, [countries]);
+
+  useEffect(() => {
+    handleSearch();
+  }, [searchInput]);
 
   useEffect(() => {
     const deaths = countries.map((country) => {
@@ -66,7 +85,7 @@ const Countries = () => {
       <div className="main-cards">
         {
           countries && countries.length > 0
-            ? countries.map((country, index) => (
+            ? filteredCountries.map((country, index) => (
               <Country
                 key={country.id}
                 country={country}
