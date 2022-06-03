@@ -1,6 +1,6 @@
 const today = new Date();
 let month = today.getMonth() + 1;
-let day = today.getDate();
+let day = today.getDate() - 1;
 export const year = today.getFullYear();
 if (month.toString().length < 2) {
   month = `0${month}`;
